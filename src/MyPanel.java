@@ -37,7 +37,7 @@ requestFocus();
         super.paintComponent(g);
 p.draw(g);
 if(p.getX() > 670 && p.getY() > 450 && p.getX() < 700 && p.getY() < 480){
-    p = null;
+    System.exit(0);
 }
 h.draw(g);
 for(int i = 0; i < opp.size(); i++){
@@ -46,6 +46,9 @@ for(int i = 0; i < opp.size(); i++){
     if(opp.get(i).getX() > 670 && opp.get(i).getY() > 450 && opp.get(i).getX() < 700 && opp.get(i).getY() < 480){
      opp.remove(i);
     }
+     if(opp.get(i).getX() == p.getX() && opp.get(i).getY() == p.getY()){
+         System.exit(0);
+     }
 }
         //delay
         try {
